@@ -1,17 +1,19 @@
-# Используем официальный образ MySQL 8.0
-FROM mysql:8.0
+# Используйте официальный образ MySQL
+FROM mysql:8.3
 
-# Устанавливаем пароль для root пользователя
+# Установите пароль для пользователя root
 ENV MYSQL_ROOT_PASSWORD=root
 
-# Создаем базу данных и пользователя
+# Создайте базу данных и пользователя
 ENV MYSQL_DATABASE=itransition_task4
 ENV MYSQL_USER=muhammad
 ENV MYSQL_PASSWORD=root
 
-# Открываем порт для подключения к MySQL
+# Добавьте ваш скрипт инициализации в папку /docker-entrypoint-initdb.d
+ADD init.sql /docker-entrypoint-initdb.d
+
+# Откройте порт для подключения к MySQL
 EXPOSE 3306
 
-# Указываем entrypoint для запуска MySQL сервера
+# Команда по умолчанию при запуске контейнера
 ENTRYPOINT ["docker-entrypoint.sh"]
-CMD ["mysqld"]
