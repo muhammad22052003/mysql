@@ -1,5 +1,5 @@
 # Используйте официальный образ MySQL
-FROM mysql:8.3
+FROM mysql:latest
 
 # Установите пароль для пользователя root
 ENV MYSQL_ROOT_PASSWORD=root
