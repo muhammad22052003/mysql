@@ -13,7 +13,7 @@ ENV MYSQL_PASSWORD=root
 ADD init.sql /docker-entrypoint-initdb.d
 
 # Откройте порт для подключения к MySQL
-EXPOSE 3306
+EXPOSE 443
 
 # Команда по умолчанию при запуске контейнера
 ENTRYPOINT ["docker-entrypoint.sh"]
