@@ -17,3 +17,4 @@ EXPOSE 3306
 
 #  оманда по умолчанию при запуске контейнера
 ENTRYPOINT ["docker-entrypoint.sh"]
+CMD ["mysqld"]
